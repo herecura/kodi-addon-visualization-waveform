@@ -4,7 +4,7 @@ pkgname=kodi-addon-visualization-waveform
 epoch=1
 pkgver=2.0.1
 _codename=Leia
-pkgrel=4
+pkgrel=5
 pkgdesc="Waveform visualizer for Kodi"
 arch=('x86_64')
 url='https://github.com/xbmc/visualization.waveform'
@@ -17,16 +17,17 @@ sha512sums=('3ba3a3b92d7bbe5e82374daf92fe1054ee80fc316e8b63d0543248406ab7c341831
 
 build() {
     cd "visualization.waveform-$pkgver-$_codename"
-	cmake \
-		-DCMAKE_INSTALL_PREFIX=/usr \
-		-DCMAKE_BUILD_TYPE=Release \
-		-DBUILD_SHARED_LIBS=1 \
-		-DUSE_LTO=1
-	make
+    cmake \
+        -DCMAKE_INSTALL_PREFIX=/usr \
+        -DCMAKE_BUILD_TYPE=Release \
+        -DBUILD_SHARED_LIBS=1 \
+        -DUSE_LTO=1 \
+        .
+    make
 }
 
 package() {
     cd "visualization.waveform-$pkgver-$_codename"
-	make DESTDIR="$pkgdir/" install
+    make DESTDIR="$pkgdir/" install
 }
 
