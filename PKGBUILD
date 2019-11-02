@@ -2,7 +2,7 @@
 
 pkgname=kodi-addon-visualization-waveform
 epoch=1
-pkgver=3.1.0
+pkgver=3.1.1
 _codename=Leia
 pkgrel=1
 pkgdesc="Waveform visualizer for Kodi"
@@ -13,7 +13,7 @@ groups=('kodi-addons' 'kodi-addons-visualization')
 depends=('kodi' 'glu' 'glm')
 makedepends=('cmake' 'kodi-dev')
 source=("$pkgname-$pkgver.tar.gz::https://github.com/xbmc/visualization.waveform/archive/$pkgver-$_codename.tar.gz")
-sha512sums=('a1204ed4d17e021508e969a522c2631a020b469cf24e6a2fcf5e586f8fbc2369b5499df8153cf984a15b570045e0f03fffefbb21d5a112a1ab3788bc35024d63')
+sha512sums=('0ed887c892b20fc4e162e9d7317d20ceb1cfce2db2cfcfa948995349ae8c97c33520202052d80c01d1122c50fac0772f18245aa40b4b7b7b55917fa533b65cd9')
 
 build() {
     cd "visualization.waveform-$pkgver-$_codename"
